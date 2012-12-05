@@ -1,8 +1,8 @@
 .hero-unit {
-  padding: 30px;
+  padding: 25px;
 }
 #device-list tfoot input,
 #device-list tfoot input:focus {
-  width: 85px;
+  width: 80px;
 }
 
