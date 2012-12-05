@@ -14,6 +14,7 @@
       = f.text_field :owner,        class: 'typeahead', placeholder: 'Start typing in the user name',  autocomplete: 'off'
       = f.text_field :property_of,  title: t('device.form.property_of')
       = f.text_field :serial_num,   title: t('device.form.serial_num'),  label: 'Serial Number'
+      = f.text_field :location,     title: t('device.form.location'),  label: 'Location'
 
     .span6
       = f.file_field :device_photo
@@ -22,6 +23,7 @@
       = f.text_field :service_provider, title: t('device.form.service_provider')
       = f.text_field :mac_addr,         title: t('device.form.mac_addr'),        label: 'MAC Address'
       = f.text_field :ip_addr,          title: t('device.form.ip_addr'),         label: 'IP Address'
+      = f.text_field :team,             title: t('device.form.team'),            label: 'Team'
   
   / Accessories
   %h3= accessories_heading(@device)

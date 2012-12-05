@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121003102758) do
+ActiveRecord::Schema.define(:version => 20121205061228) do
 
   create_table "accessories", :force => true do |t|
     t.text     "description"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(:version => 20121003102758) do
     t.string   "imei"
     t.string   "created_by"
     t.string   "updated_by"
+    t.string   "location"
+    t.string   "team"
   end
 
   create_table "events", :force => true do |t|

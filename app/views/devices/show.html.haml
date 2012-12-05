@@ -31,6 +31,9 @@
         %b Owner:
         = "#{@device.owner}"
       .field
+        %b Team:
+        = "#{@device.team}"
+      .field
         %b Possessor:
         - if @device.available?
           %span.label.label-info None
@@ -60,6 +63,9 @@
       .field
         %b Serial:
         = "#{@device.serial_num}"
+      .field
+        %b Location:
+        = "#{@device.location}"
       .field
         %b Property Of:
         = "#{@device.property_of}"

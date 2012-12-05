@@ -7,6 +7,7 @@
       %th Serial 
       %th Project
       %th Owner
+      %th Location
       %th Availability
       %th
   %tbody
@@ -18,6 +19,7 @@
         %td= device.serial_num
         %td= device.project
         %td= device.owner
+        %td= device.location
         %td
           = state_label(device)
         %td.device-actions{id: "device-actions-#{device.id}"}= device_actions(device)
@@ -33,6 +35,7 @@
         %input.search_init{:name => "search_serial", :type => "text", :value => "Search Serial"}/
       %td
         %input.search_init{:name => "search_project", :type => "text", :value => "Search Project"}/
+      %td
       %td
       %td
       %td
