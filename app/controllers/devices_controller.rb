@@ -174,7 +174,7 @@ class DevicesController < ApplicationController
 
     respond_to do |format|
       if @device.save
-        Event.record_event(@device.id, "Device has been created")
+        Event.record_event(@device.id, "Device has been created by #{current_user}")
         format.html { redirect_to @device, notice: 'Device was successfully created.' }
         format.json { render json: @device, status: :created, location: @device }
       else
@@ -231,7 +231,7 @@ class DevicesController < ApplicationController
 
     respond_to do |format|
       if @device.receive
-        Event.record_event(@device.id, "Device has been returned")
+        Event.record_event(@device.id, "Device has been returned by #{current_user}")
         format.html { redirect_to @device, notice: 'Returned the device successfully. It\'s now available to other users' }
       else
         format.html { redirect_to @device, notice: 'Unable to receive the device' }
@@ -244,7 +244,7 @@ class DevicesController < ApplicationController
 
     respond_to do |format|
       if @device.make_unavailable
-        Event.record_event(@device.id, "Device has been made unavailable to other users")
+        Event.record_event(@device.id, "Device has been made unavailable to other users by #{current_user}")
         format.html { redirect_to edit_device_path, notice: 'The device is now marked unavailable to other users.' }
       else
         format.html { redirect_to edit_device_path, error: 'Unable to mark the device as unavailable.' }
@@ -257,7 +257,7 @@ class DevicesController < ApplicationController
 
     respond_to do |format|
       if @device.make_available
-        Event.record_event(@device.id, "Device has been made available to other users")
+        Event.record_event(@device.id, "Device has been made available to other users by #{current_user}")
         format.html { redirect_to edit_device_path, notice: 'The device is now marked available to other users.' }
       else
         format.html { redirect_to edit_device_path, error: 'Unable to mark the device as available.' }

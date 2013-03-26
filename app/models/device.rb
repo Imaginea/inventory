@@ -94,6 +94,7 @@ class Device < ActiveRecord::Base
 
     ActiveRecord::Base.transaction do
       self.save!
+      message = message + 'by '+ params["updated_by"] if params["updated_by"] 
       Event.record_event(self.id, message, comment)
       all_done = true
     end
