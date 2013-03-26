@@ -107,7 +107,7 @@ class DevicesController < ApplicationController
             d.property_of      = row[14]
             d.state            = :available
             d.save
-            Event.record_event(d.id, "Device has been imported")
+            Event.record_event(d.id, "Device has been imported by #{current_user}")
           end
           flash[:notice] = 'Import successful, new records added to the database.'
         end

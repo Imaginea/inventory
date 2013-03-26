@@ -13,7 +13,7 @@ class DeviceObserver < ActiveRecord::Observer
 
   def after_reject(req, transition)
     req.device.deny
-    Event.record_event(req.device_id, "Device has been rejected to #{req.requestor}")
+    Event.record_event(req.device_id, "Device has been rejected to #{req.requestor} by #{req.owner}")
   end
 
   def before_make_available(device, transition)
